@@ -1,0 +1,32 @@
+tasks = []
+while True:
+    print("\n1. Add Task")
+    print("2. View Tasks")
+    print("3. Delete Task")
+    print("4. Exit")
+    choice = input("Enter your choice: ")
+    if choice == '1':
+       task = input("Enter the task: ")
+       tasks.append(task)
+       print("Task added !")
+
+    elif choice == '2':
+        if len(tasks) == 0:
+          print("No tasks available:")
+        else:
+            print("\nYour Tasks:")
+            for i in range (len(tasks)):
+                print(i + 1, "-", tasks[i])
+    elif choice == '3':
+        num = int(input("Enter the task number to delete: "))
+        if num > 0 and num <= len(tasks):
+            tasks.pop(num - 1)
+            print("Task deleted !")
+        else:
+            print("Invalid Number")
+
+    elif choice == '4':
+        print("Thank you!")
+        break
+    else:
+        print("Invalid choice")
